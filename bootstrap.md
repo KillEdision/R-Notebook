@@ -9,7 +9,7 @@
     thetastar <- apply(bootsam,1,theta,...)
     return(list(bootsam=bootsam，thetastar=thetastar,call=call))
 }
-
+```
 ### 参数
 + x
 用于抽样的样本
