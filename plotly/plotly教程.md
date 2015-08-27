@@ -1,5 +1,5 @@
-## [Plotly for R](https://plot.ly/r/getting-started/)
-### 安装
+# [Plotly for R](https://plot.ly/r/getting-started/)
+## 安装
 plotly is not (yet) available on CRAN, but you can install it via devtools:
 ```r
 install.packages("viridis") # dependency
@@ -76,3 +76,63 @@ p %>%
 ```r
 plot_ly(z = volcano, type = "surface")
 ```
+
+# Plotly for Python
+## 安装
+To install Plotly's Python package, use the package manager pip inside your terminal.
+```python
+$ pip install plotly
+```
+or
+```python
+$ sudo pip install plotly
+```
+If you don't have pip installed on your machine, click here for pip's installation instructions.
+Plotly's Python package is updated frequently! To upgrade, run:
+```python
+$ pip install plotly --upgrade
+```
+
+## 初始化
+In the terminal, copy and paste the following to install the Plotly library and set your user credentials.
+```python
+$ pip install plotly
+$ python -c "import plotly; plotly.tools.set_credentials_file(username='DemoAccount', api_key='lr1c37zw81')"
+```
+
+You'll need to replace 'DemoAccount' and 'lr1c37zw81' with your Plotly username and API key.
+Find my API key.
+
+### Special Instructions for Plotly On-Premise users
+Your API key for account on the public cloud will be different than the API key in Plotly On-Premise. Visit https://plotly.your-company.com/settings/api/ to find your Plotly On-Premise API key. Remember to replace "your-company.com" with the URL of your Plotly On-Premise server.  
+If your company has a Plotly On-Premise server, change the Python API endpoint so that it points to your company's Plotly server instead of Plotly's cloud.  
+
+In your Terminal, enter:
+```python
+$ python -c "import plotly; plotly.tools.set_config_file(plotly_domain='https://plotly.your-company.com',
+plotly_streaming_domain='stream-plotly.your-company.com', plotly_api_domain='https://api-plotly.your-company.com')"
+```
+
+## Start plotting!
+### Fire up Python!
+```python
+$ python
+```
+
+```python
+import plotly.plotly as py
+from plotly.graph_objs import Scatter
+
+trace0 = Scatter(x=[1, 2, 3, 4],
+    y=[10, 15, 13, 17]
+)
+trace1 = Scatter(
+    x=[1, 2, 3, 4],
+    y=[16, 5, 11, 9]
+)
+data = [trace0, trace1]
+
+unique_url = py.plot(data, filename = 'basic-line')
+```
+
+程序执行到这一步
