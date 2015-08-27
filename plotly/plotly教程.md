@@ -7,8 +7,6 @@ install.packages("devtools")
 devtools::install_github("ropensci/plotly")
 ```
 ### 注册账户
-SIGNUP
-
 If you don't already have a plotly account, either signup online or use the signup() function (see the help(signup) page for more details).
 
 Note you can check if you have a username and API key with:
@@ -54,3 +52,27 @@ Success! Created a new plotly here -> https://plot.ly/~luojie2211/42
 作为上述图形的附件，当别人浏览该图形的时候，可以顺带下载该附件中的内容
 ![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%205.png)
 
+## 其他的代码
+### KNOW AND LOVE GGPLOT2? TRY GGPLOTLY
+```r
+p <- ggplot(data = d, aes(x = carat, y = price)) +
+  geom_point(aes(text = paste("Clarity:", clarity)), size = 4) +
+  geom_smooth(aes(colour = cut, fill = cut)) + facet_wrap(~ cut)
+
+(gg <- ggplotly(p))
+```
+### MIX DATA MANIPULATION AND VISUALIZATION VERBS
+```r
+str(p <- plot_ly(economics, x = date, y = uempmed))
+p %>%
+  add_trace(y = fitted(loess(uempmed ~ as.numeric(date)))) %>%
+  layout(title = "Median duration of unemployment (in weeks)",
+         showlegend = FALSE) %>%
+  dplyr::filter(uempmed == max(uempmed)) %>%
+  layout(annotations = list(x = date, y = uempmed, text = "Peak", showarrow = T))
+```
+
+### 3D WEBGL AND MORE
+```r
+plot_ly(z = volcano, type = "surface")
+```
