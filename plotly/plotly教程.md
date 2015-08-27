@@ -38,5 +38,20 @@ Success! Created a new plotly here -> https://plot.ly/~luojie2211/42
 
 打开上面的链接，显示如下的内容：
 + plot
+刚才绘制的图形
 ![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%201.png)
+
++ data
+绘制上面的图形所使用的数据
+![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%202.png)
+
++ code
+绘制上面的图形的代码，可以在`R`、`Python`、`Json`、`JavaScript`、`Julia`等语言之间转换
+![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%203.png)  
+
+![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%204.png)
+
++ extras
+作为上述图形的附件，当别人浏览该图形的时候，可以顺带下载该附件中的内容
+![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%205.png)
 
