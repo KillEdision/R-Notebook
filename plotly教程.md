@@ -23,3 +23,11 @@ Find your credentials in our online settings. Set them in your R session with:
 Sys.setenv("plotly_username"="your_plotly_username")
 Sys.setenv("plotly_api_key"="your_api_key")
 ```
+### 例子
+```r
+library(plotly)
+set.seed(100)
+d <- diamonds[sample(nrow(diamonds), 1000), ]
+plot_ly(d, x = carat, y = price, text = paste("Clarity: ", clarity),mode = "markers", color = carat, size = carat)
+```
+
