@@ -31,3 +31,11 @@ d <- diamonds[sample(nrow(diamonds), 1000), ]
 plot_ly(d, x = carat, y = price, text = paste("Clarity: ", clarity),mode = "markers", color = carat, size = carat)
 ```
 
+执行完成之后，会显示如下的内容
+```
+Success! Created a new plotly here -> https://plot.ly/~luojie2211/42
+```
+
+打开上面的链接，显示如下的内容：
+![]('D:/R-Notebook/plotly/Image 1.png')
+
