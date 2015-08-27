@@ -48,7 +48,6 @@ Success! Created a new plotly here -> https://plot.ly/~luojie2211/42
 + code
 绘制上面的图形的代码，可以在`R`、`Python`、`Json`、`JavaScript`、`Julia`等语言之间转换
 ![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%203.png)  
-
 ![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%204.png)
 
 + extras
