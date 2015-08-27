@@ -37,5 +37,5 @@ Success! Created a new plotly here -> https://plot.ly/~luojie2211/42
 ```
 
 打开上面的链接，显示如下的内容：
-![]('D:/R-Notebook/plotly/Image 1.png')
+![]('https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%201.png')
 
