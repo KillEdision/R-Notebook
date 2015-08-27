@@ -3,6 +3,8 @@ You can customize the `R` environment through a site initialization file or a di
 
 At startup, R will source the `Rprofile.site` file. It will then look for a `.Rprofile file` to source in the current working directory. If it doesn't find it, it will look for one in the user's home directory. There are two special functions you can place in these files. `.First( )` will be run at the start of the R session and `.Last( )` will be run at the end of the session.  
 
+该文件在我点的电脑上的位置为`E:\Program Files\R\R-3.2.2\etc\Rprofile.site`，要想设置起作用的话，要去掉`#`
+
 ```r
 # Sample Rprofile.site file 
 
