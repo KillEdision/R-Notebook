@@ -135,4 +135,87 @@ data = [trace0, trace1]
 unique_url = py.plot(data, filename = 'basic-line')
 ```
 
-程序执行到这一步
+程序执行到这一步，会自动打开网页，内容如下：
+
++ plot
+![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%206.png)
+
++ data
+![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%207.png)
+
++ code
+![](https://raw.githubusercontent.com/KillEdision/R-Notebook/master/plotly/Image%208.png)
+
+You can also create plotly graphs with matplotlib syntax. Learn more in our [matplotlib documentation](https://plot.ly/matplotlib/).
+
+You can also create plotly graphs within an IPython notebook. Learn more in our [IPython notebook documentation](https://plot.ly/ipython-notebooks/).
+
+By default, plotly graphs are public and saved to [your online plotly account](https://plot.ly/organize). To create graphs offline and locally, [license plotly offline](https://plot.ly/python/offline). To create private graphs, set sharing to 'private':
+```python
+py.plot(data, share='private', filename='private-plot') # you'll need to be logged in to plotly to view this graph
+```
+or, create a randomized "secret" URL:
+```python
+py.plot(data, share='secret', filename='secret-plot') # anybody with the URL can view the plot
+```
+[Learn more about private charting](https://plot.ly/python/privacy/).
+
+## Credentials
+The initialization step places a special .plotly/.credentials file in your home directory. Your ~/.plotly/.credentials file should look something like this:
+```json
+{
+    "username": "DemoAccount",
+    "stream_ids": ["ylosqsyet5", "h2ct8btk1s", "oxz4fm883b"],
+    "api_key": "lr1c37zw81"
+}
+```
+You can change the contents of this file manually or as described in the Initialization section.
+
+# Plotly for IPython Notebooks
+
+Instructions on how to install Plotly's Python package can be found on the PLOTLY FOR PYTHON GETTING STARTED PAGE.
+
+## Creating an interactive graph inside IPython notebook
+```python
+import plotly.plotly as py
+from plotly.graph_objs import *
+
+trace0 = Scatter(
+  x=[1, 2, 3, 4],
+  y=[10, 15, 13, 17]
+)
+trace1 = Scatter(
+  x=[1, 2, 3, 4],
+  y=[16, 5, 11, 9]
+)
+data = Data([trace0, trace1])
+
+py.iplot(data, filename = 'basic-line')
+```
+
+## Converting a matplotlib graph into an interactive graph inside an IPython notebook
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import plotly.plotly as py
+
+n = 50
+x, y, z, s, ew = np.random.rand(5, n)
+c, ec = np.random.rand(2, n, 4)
+area_scale, width_scale = 500, 5
+
+fig, ax = plt.subplots()
+sc = ax.scatter(x, y, c=c,
+                s=np.square(s)*area_scale,
+                edgecolor=ec,
+                linewidth=ew*width_scale)
+ax.grid()
+
+py.iplot_mpl(fig)
+```
+Embedding a Plotly graph inside an IPython notebook
+```python
+import plotly.tools as tls
+
+tls.embed("https://plot.ly/~streaming-demos/4")
+```
