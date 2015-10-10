@@ -41,3 +41,9 @@ dev.off()
 pretty(x = 1:10,n = 20)
 #生成美化的断点，将1:10切分为20个离散的数
 ```
+
+## 如何调用系统内的程序？
+使用 system() 函数或用 shell.exec() 调用相应程序来打开文件:
+```r
+system('"D:/Program Files/有道词典/YodaoDict.exe"')
+```
